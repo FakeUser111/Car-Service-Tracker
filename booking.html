@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Car Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background gradient inspired by logo */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Centered booking container with glassmorphism */
+.booking-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+h2, h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Input fields */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #0072ff;
+    box-shadow: 0px 0px 8px rgba(0, 114, 255, 0.5);
+}
+
+/* Booking button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: white;
+}
+
+th {
+    background: #0072ff;
+    color: white;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <img src="images/logo.png" alt="Car Service Tracker Logo" class="logo">
+        <h2>Book a Car Service</h2>
+        <div class="input-group">
+            <input type="text" id="carModel" placeholder="Car Model">
+        </div>
+        <div class="input-group">
+            <input type="date" id="serviceDate">
+        </div>
+        <div class="input-group">
+            <input type="text" id="serviceType" placeholder="Service Type (e.g., Oil Change)">
+        </div>
+        <button onclick="bookService()">📅 Book Service</button>
+
+        <h3>🛠️ Service Bookings</h3>
+        <table id="bookingTable">
+            <thead>
+                <tr>
+                    <th>🚗 Car Model</th>
+                    <th>📅 Service Date</th>
+                    <th>🔧 Service Type</th>
+                </tr>
+            </thead>
+            <tbody id="bookingList"></tbody>
+        </table>
+    </div>
+    
+    <script src="scripts/service-booking.js"></script>
+</body>
+</html>
