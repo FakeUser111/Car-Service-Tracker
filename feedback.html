@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background gradient inspired by logo */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Centered feedback container with glassmorphism */
+.feedback-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+h2, h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Text description */
+p {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group input, .input-group textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #0072ff;
+    box-shadow: 0px 0px 8px rgba(0, 114, 255, 0.5);
+}
+
+/* Feedback button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Feedback list */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* Feedback items */
+li {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <img src="images/logo.png" alt="Car Service Tracker Logo" class="logo">
+        <h2>🚀 We Value Your Feedback</h2>
+        <p>Your feedback helps us improve our service. Let us know your thoughts!</p>
+        
+        <div class="input-group">
+            <input type="text" id="name" placeholder="Your Name">
+        </div>
+        <div class="input-group">
+            <textarea id="feedback" placeholder="Write your feedback here..."></textarea>
+        </div>
+        <button onclick="submitFeedback()">💬 Submit Feedback</button>
+
+        <h3>📌 Previous Feedback</h3>
+        <ul id="feedbackList"></ul>
+    </div>
+
+    <script src="scripts/feedback.js"></script>
+</body>
+</html>
