@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Service Entry</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background inspired by logo color scheme */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Centered service container with glassmorphism effect */
+.service-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Service Icon Styling */
+.service-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Headings */
+h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Input Group Styling */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 16px;
+    color: white;
+    outline: none;
+}
+
+/* Input Placeholder Color */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Service Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Result Display */
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+</head>
+<body>
+    <div class="service-container">
+        <img src="images/logo.png" alt="Service Icon" class="service-icon">
+        <h2>🚗 Enter Last Service Details</h2>
+        <p>Track your car's next service date with ease.</p>
+
+        <div class="input-group">
+            <input type="date" id="lastServiceDate" placeholder="📅 Last Service Date">
+        </div>
+        <div class="input-group">
+            <input type="number" id="mileage" placeholder="🚘 Current Mileage (in km)">
+        </div>
+
+        <button onclick="calculateNextService()">🔍 Calculate Next Service Date</button>
+        <p class="result" id="nextServiceDate"></p>
+    </div>
+    
+    <script src="scripts/service.js"></script>
+</body>
+</html>
