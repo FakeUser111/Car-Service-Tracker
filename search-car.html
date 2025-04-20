@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Model Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background inspired by logo color scheme */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Centered search container with glassmorphism effect */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+h1 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 70%;
+    font-size: 16px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #0072ff;
+    box-shadow: 0px 0px 8px rgba(0, 114, 255, 0.5);
+}
+
+/* Search button */
+button {
+    padding: 12px;
+    background: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Car result cards */
+.car-card {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    text-align: left;
+    color: white;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Hover effect for car cards */
+.car-card:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="Car Service Logo" class="logo">
+        <h1>🚗 Search for Car Models</h1>
+        <p>Find car details with just a few clicks!</p>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Enter Car Model (e.g., Toyota)">
+            <button id="searchBtn">🔎 Search</button>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script src="scripts/search-car.js"></script>
+</body>
+</html>
