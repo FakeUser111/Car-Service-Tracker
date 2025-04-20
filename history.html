@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service History</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background gradient inspired by logo */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #00c6ff, #0072ff);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Centered service history container with glassmorphism */
+.history-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+h2, h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Description text */
+p {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group input, .input-group textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #0072ff;
+    box-shadow: 0px 0px 8px rgba(0, 114, 255, 0.5);
+}
+
+/* Save button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Service history table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table headers */
+th {
+    background: #0072ff;
+    color: white;
+    padding: 12px;
+}
+
+/* Table rows */
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effect */
+tr:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.02);
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Delete Button */
+.delete-btn {
+    background: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+<body>
+    <div class="history-container">
+        <img src="images/logo.png" alt="Car Service Tracker Logo" class="logo">
+        <h2>🔧 Car Service History</h2>
+        <p>Track and manage your service records easily!</p>
+
+        <h3>📌 Enter New Service Record</h3>
+        <div class="input-group">
+            <input type="text" id="carModel" placeholder="🚗 Car Model">
+        </div>
+        <div class="input-group">
+            <input type="date" id="serviceDate">
+        </div>
+        <div class="input-group">
+            <input type="number" id="mileage" placeholder="📏 Mileage">
+        </div>
+        <div class="input-group">
+            <textarea id="serviceDetails" placeholder="📝 Service Details"></textarea>
+        </div>
+        <button onclick="saveServiceRecord()">💾 Save Record</button>
+
+        <h3>📋 Previous Service Records</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>🚗 Car Model</th>
+                    <th>📅 Service Date</th>
+                    <th>📏 Mileage</th>
+                    <th>📝 Details</th>
+                    <th>🗑 Delete</th>
+                </tr>
+            </thead>
+            <tbody id="historyTable"></tbody>
+        </table>
+    </div>
+
+    <script src="scripts/history.js"></script>
+</body>
+</html>
