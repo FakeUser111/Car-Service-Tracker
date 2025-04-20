@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Servicing Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    .guide-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0072ff;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background-color: #f0f0f0;
+      padding: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background-color: #e0e0e0;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 15px;
+      background: #fafafa;
+      border-top: 1px solid #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0072ff;
+      color: #fff;
+      border: none;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #005bb5;
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-container">
+    <h1>Car Servicing Guide - FAQ</h1>
+
+    <div class="faq-item">
+      <div class="faq-question">1. What regular maintenance should I do?</div>
+      <div class="faq-answer">
+        <ul>
+          <li>Engine oil change – every 5,000 to 10,000 km</li>
+          <li>Brake inspection – every 10,000 km</li>
+          <li>Tire rotation and alignment – every 10,000 km</li>
+          <li>Battery check – every 6 months</li>
+          <li>Coolant & fluid levels – monthly</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">2. How do I know if my car needs servicing?</div>
+      <div class="faq-answer">
+        <ul>
+          <li>Unusual engine noise</li>
+          <li>Warning lights on dashboard</li>
+          <li>Reduced fuel efficiency</li>
+          <li>Brake issues or vibrations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">3. Tips to increase car life?</div>
+      <div class="faq-answer">
+        <ul>
+          <li>Drive smoothly and avoid rapid acceleration</li>
+          <li>Check tire pressure regularly</li>
+          <li>Keep your car clean (including underbody)</li>
+          <li>Don’t ignore dashboard warning lights</li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn">← Back to Home</a>
+  </div>
+
+  <script>
+    const faqs = document.querySelectorAll('.faq-question');
+
+    faqs.forEach(faq => {
+      faq.addEventListener('click', () => {
+        const answer = faq.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
